@@ -1,0 +1,39 @@
+@CHARSET "UTF-8";
+.num {
+    float: left;
+    margin-left: -40px;
+}
+.left{
+	    width:560px;
+   		height:400px;
+   		float:left;
+   }
+   .right{
+		width:420px;
+   		height:400px;
+   		float:right;
+   }
+   .change{
+	float: left;
+    width: 860px;
+    height: 50px;
+    padding: 0;
+    border: 1px solid #e4e4e4;
+    margin: 0;
+    font-size: 14px;
+    line-height: 20px;
+    border-radius: 1px;
+    resize: vertical;
+   }
+.btn{
+	float: right;
+    width: 100px;
+    height: 50px;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background-color: #ff9d00;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 3px;
+   }

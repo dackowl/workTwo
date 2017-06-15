@@ -1,0 +1,70 @@
+
+#content{
+    height: 480px;
+    overflow: hidden;
+}
+.navbar{
+	border: none;
+	margin: 0px;
+}
+.navbtn{
+	margin:16px 24px 16px 12px;
+
+}
+.nbt{
+	margin:11px 0px 11px 12px; 
+}
+.carousel-inner>.item>a>img, .carousel-inner>.item>img{ 
+	width: 100%
+}
+.nbt2{
+	color: #f7941d;
+	margin:11px 0px 11px 12px; 
+	background-color: white;
+	border-color: #f7941d;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #f7941d;
+    border-color: #f7941d;
+}
+.btn-primary:hover >a{
+	color: white;
+}
+.nbt2>a{
+	color: #f7941d;
+}
+.navbar-toggle{
+	/* background-color: #747474;
+	border-color: black; */
+}
+.navbar-right li{
+    font-size: 18px;
+    color: #6a6a6a;
+}
+.navbar-default .navbar-nav>li>a,
+.navbar-default .navbar-nav>li>a:focus, 
+.navbar-default .navbar-nav>li>a:hover{
+	font-size: 18px;
+    color: #6a6a6a;
+	padding: 2px;
+	border-bottom: 2px solid #f8f8f8;
+	margin:16px 0px 16px 24px; 
+}
+.navbar-default .navbar-nav>li>a:focus, 
+.navbar-default .navbar-nav>li>a:hover {
+	background-color: #f8f8f8;
+	border-bottom: 2px solid #e77817;
+}
+
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+	margin-right: 12px; 
+	background-color: #f8f8f8;
+	border-bottom: 2px solid #e77817;
+}
+footer{
+	height: 320px;
+	background-color: rgba(0,0,0,0.8);
+}

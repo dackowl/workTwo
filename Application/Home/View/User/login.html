@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- 引用bootstrap,angular,jquery.j及默认样式 -->
+	<include file="Public/head"/>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/CSS/reg.css">
+</head>
+<body>
+	<!-- 主要内容区 -->
+	<include file="Public/login_coonter"/>
+</body>
+<script>
+	checkImg="{:U('User/VerifyImg')}"+"?"+Math.random();
+	angular.module('myApp', []).controller('user', function($scope,$http) {
+    $scope.account = '';
+    $scope.pwd = '';
+    $scope.chn='';
+    $scope.checkImg=function(){
+      // console.log(0);
+      $http({
+            url:"{:U('User/VerifyImg')}",
+            method:'post',   
+              data:{
+                code:$scope.code
+              },
+              headers:{'Content-Type':'application/x-www-form-urlencoded'},
+              transformRequest: transform 
+            }).then(function(response){
+               console.log(response.data);
+               $scope.chn=response.data.sta;
+               if ($scope.chn=='0') {
+               	alert('验证码错误');
+               }
+               
+               // console.log($scope.chn);
+            }).catch(function (res) {
+              // alert('修改失败未知错误');
+              console.log(res);
+          });
+    }
+    $scope.login=function(){
+      var user= {
+        account:$scope.account,
+        pwd:$scope.pwd
+      }
+      // console.log(user)
+       $http({
+            url:"{:U('User/login')}",
+            method:'post',   
+              data:{
+                data:user
+              },
+              headers:{'Content-Type':'application/x-www-form-urlencoded'},
+              transformRequest: transform  
+            }).then(function(response){
+               console.log(response.data);
+               if (response.data.sta=='0') {
+                  alert(response.data.data);
+                  window.location.href="{:U('User/home')}"
+               }else{
+                  alert(response.data.data);
+               }
+              
+            }).catch(function (res) {
+              alert('服务器未响应');
+              console.log(res);
+          });
+      }  
+  })
+  var transform = function(data){  
+    return $.param(data);  
+  }   
+</script>
+<script src="__PUBLIC__/Home/JS/login.js" type="text/javascript" charset="utf-8" async defer></script>
+</html>

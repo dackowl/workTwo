@@ -1,0 +1,65 @@
+<!-- 导航条
+================================================== -->
+<nav class="navbar navbar-default" role="navigation">
+  <div class="sf">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle navbtn" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">菜单</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="home.html">
+          <p>蜂窝网</p>
+        </a>
+      </div>
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="text-center" href="{:U('User/home')}">首页</a></li>
+          <li><a class="text-center" href="{:U('Des/index')}">目的地</a></li>
+          <li><a class="text-center" href="{:U('Travel/index')}">游记</a></li>
+          <li><a class="text-center" href="{:U('shop/index')}">活动</a></li>
+          <li class="out dropdown">
+            <a class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">{$login.nick}
+                <span class="caret"></span>
+            <a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation">
+                  <a role="menuitem" tabindex="-1" href="{:U('Personal/personalCenter')}">个人中心</a>
+              </li>
+              <li role="presentation">
+                  <a role="menuitem" tabindex="-1" href="#" onclick="out()">退出</a>
+              </li>
+            </ul>
+          </li>
+          <li class="other">
+            <button type="button" class="btn btn-default pull-right nbt"><a href="QQlogin.html">QQ登录</a></button>
+            <button type="button" class="btn btn-default pull-right nbt"><a href="{:U('User/reg')}">注册</a></button>
+            <button type="button" class="btn btn-default pull-right nbt"><a href="{:U('User/login')}">登录</a></button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<script>
+$out_url="{:U('User/out')}";
+var transform = function(data) {
+  return $.param(data);
+}
+$login="{$login.id}";
+// console.log($login);
+if($login!=""){
+    $('.other').hide();
+    $('.out').show();
+  }else{
+    console.log(1212313);
+    $('.other').show();
+    $('.out').hide();
+  }
+function out(){
+  window.location.href="{:U('User/out')}";
+}
+
+</script>

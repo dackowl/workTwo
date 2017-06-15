@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>注册</title>
+  <include file="Public/head"/>
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/CSS/reg.css">
+</head>
+<body ng-app="myApp" ng-controller="user">
+  <include file="Public/reg_conter"/>
+</body>
+<script>
+  checkNameUrl="{:U('User/checkName')}";
+  regUrl="{:U('User/reg')}";
+</script>
+
+<script>
+  angular.module('myApp', []).controller('user', function($scope,$http) {
+    $scope.account = '';
+    $scope.pwd = '';
+    $scope.pwds = '';
+    $scope.chn='';
+    $scope.checkName=function(){
+      // console.log(0);
+      $http({
+            url:"{:U('User/checkName')}",
+            method:'post',   
+              data:{
+                data:$scope.account
+              },
+              headers:{'Content-Type':'application/x-www-form-urlencoded'},
+              transformRequest: transform 
+            }).then(function(response){
+               console.log(response.data);
+               $scope.chn=response.data;
+               // console.log($scope.chn);
+            }).catch(function (res) {
+              // alert('修改失败未知错误');
+              console.log(res);
+          });
+    }
+    $scope.regf=function(){
+      var user= {
+        account:$scope.account,
+        pwd:$scope.pwd
+      }
+      // console.log(user)
+       $http({
+            url:"{:U('User/reg')}",
+            method:'post',   
+              data:{
+                data:user
+              },
+              headers:{'Content-Type':'application/x-www-form-urlencoded'},
+              transformRequest: transform  
+            }).then(function(response){
+               console.log(response.data);
+               if (response.data.sta=='0') {
+                  alert(response.data.data);
+                  window.location.href="{:U('User/login')}"
+               }else{
+                  alert(response.data.data);
+               }
+              
+            }).catch(function (res) {
+              alert('修改失败未知错误');
+              console.log(res);
+          });
+      }  
+  })
+  var transform = function(data){  
+    return $.param(data);  
+  }  
+</script>
+
+</html>

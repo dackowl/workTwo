@@ -1,0 +1,48 @@
+[ 2017-05-30T21:02:47+08:00 ] ::1 /work/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000343s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000606s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000663s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000071s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000124s ]
+NOTIC: [8] Undefined variable: login /Users/hunkhe/Desktop/hf161028/work/Application/Runtime/Cache/Home/3c2cb086f96d013b5e3406943f509c9c.php 第 175 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011812s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011860s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000154s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000200s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/hunkhe/Desktop/hf161028/work/Application/Home/Controller/UserController.class.php:13) /Users/hunkhe/Desktop/hf161028/work/ThinkPHP/Library/Think/View.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/hunkhe/Desktop/hf161028/work/Application/Home/Controller/UserController.class.php:13) /Users/hunkhe/Desktop/hf161028/work/ThinkPHP/Library/Think/View.class.php 第 92 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/hunkhe/Desktop/hf161028/work/Application/Home/Controller/UserController.class.php:13) /Users/hunkhe/Desktop/hf161028/work/ThinkPHP/Library/Think/View.class.php 第 93 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000653s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000692s ]
+
+[ 2017-05-30T22:05:11+08:00 ] ::1 /work/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000732s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000851s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000910s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000107s ]
+NOTIC: [8] Undefined variable: login /Users/hunkhe/Desktop/hf161028/work/Application/Runtime/Cache/Home/3c2cb086f96d013b5e3406943f509c9c.php 第 175 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012419s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012462s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000143s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000169s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/hunkhe/Desktop/hf161028/work/Application/Home/Controller/UserController.class.php:13) /Users/hunkhe/Desktop/hf161028/work/ThinkPHP/Library/Think/View.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/hunkhe/Desktop/hf161028/work/Application/Home/Controller/UserController.class.php:13) /Users/hunkhe/Desktop/hf161028/work/ThinkPHP/Library/Think/View.class.php 第 92 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/hunkhe/Desktop/hf161028/work/Application/Home/Controller/UserController.class.php:13) /Users/hunkhe/Desktop/hf161028/work/ThinkPHP/Library/Think/View.class.php 第 93 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000486s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000515s ]
+

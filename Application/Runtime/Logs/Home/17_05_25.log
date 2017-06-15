@@ -1,0 +1,200 @@
+[ 2017-05-25T14:17:19+08:00 ] ::1 /work/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002159s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002128s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002230s ]
+NOTIC: [2] Redis::connect(): connect() failed: Connection refused /Users/hunkhe/Desktop/hf161028/work/ThinkPHP/Library/Think/Cache/Driver/Redis.class.php 第 43 行.
+ERR: Redis server went away
+
+[ 2017-05-25T14:18:49+08:00 ] ::1 /work/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001457s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001158s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001245s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000107s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000162s ]
+NOTIC: [8] Undefined variable: login /Users/hunkhe/Desktop/hf161028/work/Application/Runtime/Cache/Home/3c2cb086f96d013b5e3406943f509c9c.php 第 170 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025590s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025636s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000815s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000872s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/hunkhe/Desktop/hf161028/work/Application/Home/Controller/UserController.class.php:13) /Users/hunkhe/Desktop/hf161028/work/ThinkPHP/Library/Think/View.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/hunkhe/Desktop/hf161028/work/Application/Home/Controller/UserController.class.php:13) /Users/hunkhe/Desktop/hf161028/work/ThinkPHP/Library/Think/View.class.php 第 92 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/hunkhe/Desktop/hf161028/work/Application/Home/Controller/UserController.class.php:13) /Users/hunkhe/Desktop/hf161028/work/ThinkPHP/Library/Think/View.class.php 第 93 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002283s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002349s ]
+
+[ 2017-05-25T14:18:49+08:00 ] ::1 /work/index.php/Pro/scech.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000394s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000772s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000837s ]
+SQL: SHOW COLUMNS FROM `mf_shop` [ RunTime:0.0037s ]
+SQL: SELECT `s_name`,`s_pri`,`s_img`,`s_num` FROM `mf_shop` WHERE `s_num` > 0 ORDER BY s_num LIMIT 4   [ RunTime:0.0010s ]
+NOTIC: [8] Use of undefined constant AJAX_MSG - assumed 'AJAX_MSG' /Users/hunkhe/Desktop/hf161028/work/Application/Home/Controller/ProController.class.php 第 26 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000556s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000596s ]
+
+[ 2017-05-25T22:25:01+08:00 ] ::1 /work/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002168s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002387s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002488s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000162s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000245s ]
+NOTIC: [8] Undefined variable: login /Users/hunkhe/Desktop/hf161028/work/Application/Runtime/Cache/Home/3c2cb086f96d013b5e3406943f509c9c.php 第 170 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031105s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031209s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001665s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001765s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/hunkhe/Desktop/hf161028/work/Application/Home/Controller/UserController.class.php:13) /Users/hunkhe/Desktop/hf161028/work/ThinkPHP/Library/Think/View.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/hunkhe/Desktop/hf161028/work/Application/Home/Controller/UserController.class.php:13) /Users/hunkhe/Desktop/hf161028/work/ThinkPHP/Library/Think/View.class.php 第 92 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/hunkhe/Desktop/hf161028/work/Application/Home/Controller/UserController.class.php:13) /Users/hunkhe/Desktop/hf161028/work/ThinkPHP/Library/Think/View.class.php 第 93 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003068s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003156s ]
+
+[ 2017-05-25T22:25:02+08:00 ] ::1 /work/index.php/Pro/scech.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000600s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001956s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002032s ]
+SQL: SHOW COLUMNS FROM `mf_shop` [ RunTime:0.0111s ]
+SQL: SELECT `s_name`,`s_pri`,`s_img`,`s_num` FROM `mf_shop` WHERE `s_num` > 0 ORDER BY s_num LIMIT 4   [ RunTime:0.0012s ]
+NOTIC: [8] Use of undefined constant AJAX_MSG - assumed 'AJAX_MSG' /Users/hunkhe/Desktop/hf161028/work/Application/Home/Controller/ProController.class.php 第 26 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000662s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000751s ]
+
+[ 2017-05-25T22:26:59+08:00 ] ::1 /work/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000572s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000671s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000732s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000112s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000191s ]
+NOTIC: [8] Undefined variable: login /Users/hunkhe/Desktop/hf161028/work/Application/Runtime/Cache/Home/3c2cb086f96d013b5e3406943f509c9c.php 第 170 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012681s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012734s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000182s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000213s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/hunkhe/Desktop/hf161028/work/Application/Home/Controller/UserController.class.php:13) /Users/hunkhe/Desktop/hf161028/work/ThinkPHP/Library/Think/View.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/hunkhe/Desktop/hf161028/work/Application/Home/Controller/UserController.class.php:13) /Users/hunkhe/Desktop/hf161028/work/ThinkPHP/Library/Think/View.class.php 第 92 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/hunkhe/Desktop/hf161028/work/Application/Home/Controller/UserController.class.php:13) /Users/hunkhe/Desktop/hf161028/work/ThinkPHP/Library/Think/View.class.php 第 93 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000720s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000764s ]
+
+[ 2017-05-25T22:26:59+08:00 ] ::1 /work/index.php/Pro/scech.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000648s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000992s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001087s ]
+SQL: SHOW COLUMNS FROM `mf_shop` [ RunTime:0.0073s ]
+SQL: SELECT `s_name`,`s_pri`,`s_img`,`s_num` FROM `mf_shop` WHERE `s_num` > 0 ORDER BY s_num LIMIT 4   [ RunTime:0.0008s ]
+NOTIC: [8] Use of undefined constant AJAX_MSG - assumed 'AJAX_MSG' /Users/hunkhe/Desktop/hf161028/work/Application/Home/Controller/ProController.class.php 第 26 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000968s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001038s ]
+
+[ 2017-05-25T22:28:38+08:00 ] ::1 /work/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000474s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000775s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000859s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000123s ]
+NOTIC: [8] Undefined variable: login /Users/hunkhe/Desktop/hf161028/work/Application/Runtime/Cache/Home/3c2cb086f96d013b5e3406943f509c9c.php 第 170 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011415s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011488s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000177s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000205s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/hunkhe/Desktop/hf161028/work/Application/Home/Controller/UserController.class.php:13) /Users/hunkhe/Desktop/hf161028/work/ThinkPHP/Library/Think/View.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/hunkhe/Desktop/hf161028/work/Application/Home/Controller/UserController.class.php:13) /Users/hunkhe/Desktop/hf161028/work/ThinkPHP/Library/Think/View.class.php 第 92 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/hunkhe/Desktop/hf161028/work/Application/Home/Controller/UserController.class.php:13) /Users/hunkhe/Desktop/hf161028/work/ThinkPHP/Library/Think/View.class.php 第 93 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000825s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000862s ]
+
+[ 2017-05-25T22:28:38+08:00 ] ::1 /work/index.php/Pro/scech.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000583s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000763s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000840s ]
+SQL: SHOW COLUMNS FROM `mf_shop` [ RunTime:0.0063s ]
+SQL: SELECT `s_name`,`s_pri`,`s_img`,`s_num` FROM `mf_shop` WHERE `s_num` > 0 ORDER BY s_num LIMIT 4   [ RunTime:0.0008s ]
+NOTIC: [8] Use of undefined constant AJAX_MSG - assumed 'AJAX_MSG' /Users/hunkhe/Desktop/hf161028/work/Application/Home/Controller/ProController.class.php 第 26 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000961s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001048s ]
+
+[ 2017-05-25T22:28:44+08:00 ] ::1 /work/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000487s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000599s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000650s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000088s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000141s ]
+NOTIC: [8] Undefined variable: login /Users/hunkhe/Desktop/hf161028/work/Application/Runtime/Cache/Home/3c2cb086f96d013b5e3406943f509c9c.php 第 170 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012143s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012190s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000230s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000268s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/hunkhe/Desktop/hf161028/work/Application/Home/Controller/UserController.class.php:13) /Users/hunkhe/Desktop/hf161028/work/ThinkPHP/Library/Think/View.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/hunkhe/Desktop/hf161028/work/Application/Home/Controller/UserController.class.php:13) /Users/hunkhe/Desktop/hf161028/work/ThinkPHP/Library/Think/View.class.php 第 92 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/hunkhe/Desktop/hf161028/work/Application/Home/Controller/UserController.class.php:13) /Users/hunkhe/Desktop/hf161028/work/ThinkPHP/Library/Think/View.class.php 第 93 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000813s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000860s ]
+
+[ 2017-05-25T22:28:44+08:00 ] ::1 /work/index.php/Pro/scech.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000693s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000817s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000907s ]
+SQL: SHOW COLUMNS FROM `mf_shop` [ RunTime:0.0053s ]
+SQL: SELECT `s_name`,`s_pri`,`s_img`,`s_num` FROM `mf_shop` WHERE `s_num` > 0 ORDER BY s_num LIMIT 4   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant AJAX_MSG - assumed 'AJAX_MSG' /Users/hunkhe/Desktop/hf161028/work/Application/Home/Controller/ProController.class.php 第 26 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000606s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000651s ]
+

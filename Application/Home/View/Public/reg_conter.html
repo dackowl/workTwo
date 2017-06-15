@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row row-centered">
+    <div class="well col-md-6 col-centered">
+      <h2 class="text-center">欢迎注册</h2>
+      <form role="form" name="reg">
+        <div class="input-group input-group-md">
+          <span class="input-group-addon" id="sizing-addon1"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
+          <input type="text" class="form-control" id="account" placeholder="账号" name="user" ng-model="account" pattern="^[A-Za-z0-9]{6,18}$"  ng-blur='checkName()' required>
+          <label class="" style="color:red" ng-show="reg.user.$dirty && (reg.user.$invalid || chn.sta =='0')" >
+            <label ng-show="reg.user.$error.required">*</label>
+            <label ng-show="reg.user.$error.pattern">6-18位英文或数字</label>
+            <label ng-show="chn.sta=='0'">{{chn.data}}</label>
+          </label>
+        </div>
+        <div class="input-group input-group-md">
+          <span class="input-group-addon" id="sizing-addon1"><i class="glyphicon glyphicon-lock"></i></span>
+          <input type="password" class="form-control" id="pwd" placeholder="密码" name="pwd" ng-model="pwd" pattern="^[A-Za-z0-9]{6,18}$" required>
+          <label style="color:red" ng-show="reg.pwd.$dirty && reg.pwd.$invalid" >
+            <label ng-show="reg.pwd.$error.required">*</label>
+            <label ng-show="reg.pwd.$error.pattern">6-18位英文或数字</label>
+          </label>
+        </div>
+        <div class="input-group input-group-md">
+          <span class="input-group-addon" id="sizing-addon1"><i class="glyphicon glyphicon-lock"></i></span>
+          <input type="password" class="form-control" id="pwds" placeholder="重复密码" name="pwds" ng-model="pwds" required>
+          <label style="color:red" ng-show="reg.pwds.$dirty && (reg.pwds.$invalid || pwd!=pwds) " >
+            <label ng-show="reg.pwd.$error.required">*</label>
+            <label ng-show="pwd!=pwds">密码不一致</label>
+          </label>
+        </div>
+        <br/>
+        <p class="text-right">注册视为同意《蜜蜂窝用户使用协议》</p>
+        <button class="btn btn-warning btn-block" ng-disabled="reg.user.$invalid || reg.pwd.$invalid || reg.pwds.$invalid || pwd!=pwds || chn=='false'" type="button" ng-click='regf()'>注册</button>
+      </form>
+      <hr>
+      <p>用合作网站账户直接登录</p>
+      <div class="col-xs-1 col-sm-1 col-md-2 col-lg-2">
+
+      </div>
+      <div class="col-xs-1 col-sm-1 col-md-3 col-lg-3">
+        <img src="__PUBLIC__/Home/IMG/ico/qq.png" width="66px" alt="">
+        <p class="text-center">QQ</p>
+      </div>
+      <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+
+      </div>
+      <div class="col-xs-1 col-sm-1 col-md-3 col-lg-3">
+        <img src="__PUBLIC__/Home/IMG/ico/wc.png" width="66px" alt="">
+        <p class="text-center">微信</p>
+      </div>
+    </div>
+    <h4  class="text-center">已有账号？<a href="{:U('User/login')}">马上登陆</a></h4>
+  </div>
+</div>

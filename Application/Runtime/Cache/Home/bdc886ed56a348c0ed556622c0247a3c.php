@@ -1,0 +1,219 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>活动详情</title>
+	<link href="/work/Public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/work/Public/Home/css/eventDetails.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="/work/Public/Calendar/css/simple-calendar.css">
+	<script type="text/javascript" src="/work/Public/Calendar/js/simple-calendar.js"></script>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+	<!-- <nav class="navbar  navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+			  	
+			</div>
+		</div>
+    </nav> -->
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 text-center">
+				<img src="/work/Public/Home/IMG/adr/adr_11.jpg" class="img-responsive">
+				<div id='container'></div>
+			</div>
+			<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
+				<h1>【暑期大促】北京直飞大阪往返5-6日含税单机票（赠购物优惠劵）</h1>
+				<div class="item_fix">
+					<span>一</span>
+					<span>二</span>
+				</div>
+				<div class="item_price">
+					<ul style="padding:0 0 0 10px;">
+						<li><span>￥</span><strong>1999</strong>起/人</li>
+						<li class="item_explain"><a href='#'>价格说明</a></li>
+						<li class="item_sold">近三月售出 190 份</li>
+					</ul>
+				</div>
+				<div class="item_notice">
+					<span class="lable">预定须知</span>
+					<p class="info-tips-box">此产品为二次确认产品，在支付成功时间起24小时内供应商将进行二次确认，核实是否有位。</p>
+				</div>
+				<div class="item_notice">
+					<span class="lable">产品类型</span>
+					<div class="info-tips-box ">
+						产品类型
+					</div>
+				</div>
+				<div class="item_notice">
+					<span class="lable">选择日期</span>
+					<div class="ui_data">
+						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							选择日期
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							<li><a href="#">日历</a></li>
+							
+						</ul>
+					</div>
+				</div>
+				<div class="item_opt">
+					<span class="lable">数量选择</span>
+					<div class="item_opt_box">
+						<span class="item_input">
+							<span class="itm_adult">数量</span>
+							<span class="num">1</span>
+						</span>
+						<div class="item_btns">
+							<a href="#" class="btn-plus">+</a>
+							<a href="#" class="btn-minus">-</a>
+						</div>
+					</div>
+				</div>
+				<div class="item_action">
+					<div class="pull-left">
+						--
+					</div>
+					<div class="">
+						<button type="button" class="btn btn-warning pull-right item_buy">立即购买</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container" >
+		<div class="row">
+			<div class="navbar navbar-default" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li class="item_pi active"><a href="#product_introduction">产品介绍</a></li>
+					<li><a href="#cost_statement">费用说明</a></li>
+					<li class="hidden-xs"><a href="#purchase_notes">购买须知</a></li>
+					<li class="hidden-xs"><a href="#user_reviews">用户点评</a></li>
+					<li><a href="#closing_record">成交记录</a></li>
+				</ul>
+			</div>
+			<div id="product_introduction" class="makeBox"></div>
+			<div class="container-fluid">
+				<blockquote>
+					<h2>产品介绍</h2>
+				</blockquote>
+				<div class="info_left">
+					<div class="info_cre"></div>
+					<dl class="info_safe">
+						<dd class="dt">航班信息</dd>
+						<dd>
+							<div class="info_tm">此航班仅供参考，对应的航班时间均为当地时间，低价折扣机票存在航班调整的可能（包括航空公司、航班号、起飞时间的变化等），故机票情况以最终电子客票为准。</div>
+							<div>
+								<dd>
+									<dd>第一天</dd>
+									<dd>天津 - 大阪</dd>
+									<dd><span>12.25</span><br>天津滨海机场</dd>
+								</dd>
+							</div>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<div id="cost_statement" class="makeBox"></div>
+			<div class="container-fluid">
+				<blockquote>
+					<h2>费用说明</h2>
+				</blockquote>
+				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			</div>
+			<div id="purchase_notes" class="makeBox"></div>
+			<div class="container-fluid">
+				<blockquote>
+					<h2>购买须知</h2>
+				</blockquote>
+				
+				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+			</div>
+			<div id="user_reviews" class="makeBox"></div>
+			<div class="container-fluid">
+				<blockquote>
+					<h2>用户点评</h2>
+				</blockquote>
+				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+			</div>
+			<div id="closing_record" class="makeBox"></div>
+			<div class="container-fluid">
+				<blockquote>
+					<h2>成交记录</h2>
+				</blockquote>
+				
+				<br><br><br><br><br><br><br><br><br>
+			</div>
+
+		</div>	
+	</div>
+</body>
+	<script src="/work/Public/bootstrap/js/jquery.min.js"></script>
+  	<script src="/work/Public/bootstrap/js/bootstrap.min.js"></script>
+  	<script>
+		var options = {
+	      width: '360px',
+	      height: '260px',
+	      language: 'CH', //语言
+	      showLunarCalendar: true, //阴历
+	      showHoliday: false, //休假
+	      showFestival: true, //节日
+	      showLunarFestival: false, //农历节日
+	      showSolarTerm: false, //节气
+	      showMark: true, //标记
+	      timeRange: {
+	        startYear: 1900,
+	        endYear: 2049
+	      },
+	      mark: {
+	        '2016-5-5': '上学'
+	      },
+	      theme: {
+	        changeAble: false,
+	        weeks: {
+	          backgroundColor: '#FBEC9C',
+	          fontColor: '#4A4A4A',
+	          fontSize: '20px',
+	        },
+	        days: {
+	          backgroundColor: '#ffffff',
+	          fontColor: '#565555',
+	          fontSize: '24px'
+	        },
+	        todaycolor: 'orange',
+	        activeSelectColor: 'orange',
+	      }
+	    }
+    	var myCalendar = new SimpleCalendar('#container',options);
+    	
+  	</script>
+  	<script type="text/javascript">
+		// $(window).scroll(function(){
+		// 	if($(document).scrollTop() > 513){
+		// 		$("#myNavbar").addClass("fixednav");
+		// 	}else{
+		// 		$("#myNavbar").removeClass("fixednav");
+		// 	}
+		// });
+	
+		$(window).scroll(function() {
+			// console.log($("#myNavbar").offset().top+"px");
+			// console.log($(window).scrollTop());
+			// $scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop();
+			$('.makeBox').css({"height":"52px"});
+		    if($(window).scrollTop() > 513){
+		        $("#myNavbar").css({"position":"fixed","top":"0px"});
+		        // $('.makeBox').css({"height":"52px"});
+		    }else {
+		        $("#myNavbar").css({"position":"relative","top":"0px"});
+		        $('.item_pi').addClass('active');
+		    }
+ 		});
+	</script>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>我的订单</title>
+	<!-- 引用bootstrap,angular,jquery.j及默认样式 -->
+	<include file="Public/head"/>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<!-- 头部nav -->
+	<include file="Public/header"/>
+	<div class="container" ng-app='myApp' ng-controller='myCtrl'>
+		
+	</div>
+</body>
+<script>
+	var transform = function(data) {
+        return $.param(data);
+    }
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope, $http) {
+        //当前商品id和用户id
+        $scope.u_id = 1;
+        //准备
+        $http({
+            url:"{:U('home/dingdan/before')}",
+            method:'post',
+            data:{
+                u_id : $scope.u_id
+            },
+            headers:{'Content-Type':'application/x-www-form-urlencoded'},
+            transformRequest: transform
+        }).then(function(res){
+            console.log(res.data);
+            $scope.myData = res.data.data;
+            $scope.shopData = res.data.shopData;
+        }).catch(function (err) {
+            console.log(err);
+        });
+        //点击付款
+        $scope.pay = function($i){
+            if (confirm('是否确定付款？')) {
+                $http({
+                    url:"{:U('home/dingdan/pay')}",
+                    method:'post',
+                    data:{
+                        p_id : $i.goods_id,
+                        u_id : $scope.u_id
+                    },
+                    headers:{'Content-Type':'application/x-www-form-urlencoded'},
+                    transformRequest: transform
+                }).then(function(res){
+                    console.log(res.data);
+                }).catch(function (err) {
+                    console.log(err);
+                });
+            }
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,197 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>已发布商品信息</title>
+	<link href="/work/Public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/work/Public/AdminOrder/css/shop.css" rel="stylesheet" type="text/css">
+	<link href="/work/Public/AdminOrder/css/activity.css" rel="stylesheet" type="text/css">	
+	<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="validateCtrl">
+	<div class="container">
+		<div class="row">
+			<div class="table-responsive item_table">
+				<table class="table table-bordered table-hover table-condensed">
+				   	<caption class="text-center item_title">已发布商品信息</caption>
+				   	<thead>
+				      	<tr>
+				         	<th class="item_cent">ID</th>
+				         	<th class="item_cent">商品名称</th>
+				         	<th class="item_cent">图片</th>
+				         	<th class="item_cent">价格</th>
+				         	<th class="item_cent">库存</th>
+				         	<th class="item_cent">描述</th>
+				         	<th class="item_cent">目的地</th>
+				         	<th class="item_cent">发布时间</th>
+				         	<th class="item_cent">状态</th>
+				         	<th class="item_cent">操作</th>
+				      	</tr>
+				   	</thead>
+				   	<tbody>
+				      	<tr ng-repeat="v in res.shopData">
+					        <td class="item_cent" ng-bind="v.s_id"></td>
+							<td ng-dblclick='btns(v.s_name)'><span ng-bind="v.s_name"></span></td>
+							<td><img ng-src="/work/Public/home/IMG/pro/{{v.s_img}}"></td>
+							<td class="item_cent"><span ng-bind="v.s_pri"></span></td>
+							<td class="item_cent"><span ng-bind="v.s_num"></span></td>
+							<td><span ng-bind="v.s_details"></span></td>
+							<td class="item_cent"><span ng-bind="v.s_des"></span></td>
+							<td class="item_cent"><span ng-bind="v.s_addtime"></span></td>
+							<td class="item_cent curr_state" ng-bind="v.s_state"></td>
+							<td class="item_cent">
+								<button ng-click="upShow(v,$index)" type="button" class="btn btn-primary">
+									<span class="glyphicon glyphicon-open"></span>上架
+								</button>
+								<button ng-click="shop_edit(v,$index)" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+									<span class="glyphicon glyphicon-pencil"></span>编辑
+								</button>
+								<hr style="margin: 5px 0;">
+								<button ng-click="downHide(v,$index)" type="button" class="btn btn-warning">
+									<span class="glyphicon glyphicon-save"></span>下架
+								</button>
+								<button ng-click="delete_shop(v,$index)" type="button" class="btn btn-warning">
+									<span class="glyphicon glyphicon-remove"></span>删除
+								</button>
+							</td>
+				      	</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="item_page">
+				<span>共<span ng-bind='res.count'></span>条</span>
+	            <span>当前第<span ng-bind='res.nowPage'></span>/<span ng-bind='res.totalPage'></span>页</span>
+	            <input type='button' class="btn btn-default" value='首页' ng-click='firsPage()'/>
+	            <input type='button' class="btn btn-default" value='上一页' ng-click='upPage()'/>
+	            <input type='button' class="btn btn-default" value='下一页' ng-click='downPage()'/>
+	            <input type='button' class="btn btn-default" value='末页' ng-click='finallyPage()'/>
+			</div>
+			<!--编辑-->
+			<div class="modal fade" id="myModal" aria-hidden="true">
+			    <div class="modal-dialog">
+			        <div class="modal-content table-responsive">
+			            <div class="modal-header">
+			                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			                <h4 class="modal-title text-center">商品信息修改</h4>
+			            </div>
+			            <form class="form-horizontal" name="myForm">
+				            <div class="modal-body item_orde">
+				            	<input type="text" ng-model="suc.s_id" style="display: none;">
+				            	<input type="text" ng-model="sid" style="display: none;">
+				            	<div class="table-responsive">
+				            		<div class="form-group">
+										<label class="col-sm-2 control-label">商品名称：</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" name="item_title" required ng-model='suc.s_name' ng-pattern='/^[a-zA-Z\u4e00-\u9fa5][a-zA-Z0-9\u4e00-\u9fa5]*$/' value="{{suc.s_name}}"/>
+										</div>
+							            <span ng-show="myForm.item_title.$dirty && myForm.item_title.$invalid" class="item_warning">
+							                <span ng-show="myForm.item_title.$error.required">必填</span>
+							                <span ng-show="myForm.item_title.$error.pattern">只能输入汉字数字字母，并且数字不能开头</span>
+							            </span>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-2 control-label">图片：</label>
+										<div class="col-sm-10">
+						                	<a href="#" class="file">上传图片
+						                		<input type="file" multiple="multiple" 
+								                		id="item_detail_img" 
+								                		name="item_detail_img" 
+								                		onchange="angular.element(this).scope().picturePreview()" 
+								                		accept="image/gif, image/png, image/jpeg, image/jpg" 
+								                		ng-model='item_detail_img' 
+								                		required/>
+						                	</a>
+						                	<div id="fileImg">
+						                		<div id="up">图片预览区</div>
+						                		<div class="item_detail_img_show">
+						                			<img ng-src="/work/Public/home/IMG/pro/{{suc.s_img}}">
+						                		</div>
+						                	</div>
+						                </div>
+						                <div ng-show='myForm.item_detail_img.$dirty && myForm.item_detail_img.$invalid' class="item_warning">
+							                <span ng-show="myForm.item_detail_img.$error.required">必填</span>
+							            </div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-2 control-label">商品价格：</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" name="item_price" required ng-model='suc.s_pri' ng-pattern="/(^[1-9]\d*(\.\d{1,2})?$)|(^0(\.\d{1,2})?$)/"/>
+										</div>
+										<span ng-show="myForm.item_price.$dirty && myForm.item_price.$invalid" class="item_warning">
+							                <span ng-show="myForm.item_price.$error.required">必填</span>
+							                <span ng-show="myForm.item_price.$error.pattern">必须是两位小数的正实数</span>
+							            </span>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-2 control-label">库存：</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" name="item_num" required ng-model='suc.s_num' ng-pattern="/^[0-9]+$/"/>
+										</div>
+										<span ng-show="myForm.item_num.$dirty && myForm.item_num.$invalid" class="item_warning">
+							                <span ng-show="myForm.item_num.$error.required">必填</span>
+							                <span ng-show="myForm.item_num.$error.pattern">必须为正整数</span>
+							            </span>
+									</div>
+									
+									<div class="form-group">
+										<label class="col-sm-2 control-label">目的地：</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" name="item_places" required ng-model='suc.s_des' ng-pattern="/^([A-Za-z]|[\u4E00-\u9FA5])+$/"/>
+										</div>
+										<span ng-show="myForm.item_places.$dirty && myForm.item_places.$invalid" class="item_warning">
+							                <span ng-show="myForm.item_places.$error.required">必填</span>
+							                <span ng-show="myForm.item_places.$error.pattern">输入类型为汉字字母</span>
+							            </span>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-2 control-label">描述：</label>
+										<div class="col-sm-10">
+											<textarea class="form-control" placeholder="写上你的精彩详情吧..."
+												required
+												ng-model='suc.s_details'
+												name="item_nota" 
+												ng-pattern="/^[0-9a-zA-Z\u4e00-\u9fa5]+$/">
+											</textarea>
+										</div>
+										<div ng-show='myForm.item_nota.$dirty && myForm.item_nota.$invalid' class="item_warning">
+											<span ng-show="myForm.item_nota.$error.required">必须</span>
+							                <span ng-show="myForm.item_nota.$error.pattern">输入类型为汉字字母数字</span>
+							            </div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-2 control-label">状态：</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" name="item_state" required ng-model='suc.s_state' ng-pattern="/^([A-Za-z]|[\u4E00-\u9FA5])+$/"/>
+										</div>
+										<span ng-show="myForm.item_state.$dirty && myForm.item_state.$invalid" class="item_warning">
+							                <span ng-show="myForm.item_state.$error.required">必填</span>
+							                <span ng-show="myForm.item_state.$error.pattern">输入类型为汉字字母</span>
+							            </span>
+									</div>
+								</div>
+								<div class="modal-footer">
+							        <button type="button" class="btn btn-primary" ng-click="Determine(suc)">确定修改</button>
+							        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+							    </div>
+							</div>	
+			            </form>
+			        </div>
+			    </div>
+			</div>
+		</div>
+	</div>
+</body>
+	<script type="text/javascript">
+		var shop_preview_url 		= "<?php echo U('Admin/Shop/shopPreview');?>";//获取商品信息
+		var upShow_preview_url 		= "<?php echo U('Admin/Shop/upShow');?>";//上架
+		var shop_edit_preview_url 	= "<?php echo U('Admin/Shop/shop_edit');?>";//编辑
+		var Get_edit_info_url		= "<?php echo U('Admin/Shop/Get_edit_info');?>";//编辑获取当前商品信息
+		var downHide_preview_url    = "<?php echo U('Admin/Shop/downHide');?>";//下架
+		var delete_shop_preview_url = "<?php echo U('Admin/Shop/delete_shop');?>";//删除
+  	</script>
+	<script src="/work/Public/bootstrap/js/jquery.min.js"></script>
+  	<script src="/work/Public/bootstrap/js/bootstrap.min.js"></script>
+  	<script src="/work/Public/AdminOrder/js/shopPreview.js"></script>
+</html>

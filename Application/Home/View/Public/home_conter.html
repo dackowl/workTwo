@@ -1,0 +1,36 @@
+<div class="container" ng-app="myApp" ng-controller="home">
+	<div class="row">
+		<h2 class="hotTop">热卖</h2>
+	</div>
+	<ul class="list-inline">
+		<div class="row">
+			<li ng-repeat="x in pro">
+				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+					<div class="center" style="width: 220px" ng-click="goto(x.s_id)">
+						<img width="220px" src="__PUBLIC__/Home/IMG/pro/{{x.s_img}}" alt="">
+			 			<p>{{x.s_name}}</p>
+			 			<p class="text-right"><span class="pull-right">{{x.s_pri}}￥/人</span></p>
+					</div>
+				</div>
+			</li>
+		</div>				
+	</ul>
+	<hr style="margin-bottom:42px; ">
+
+	<div class="row">
+		<ul id="myTab" class="nav nav-tabs">
+			<li class="active col-xs-2 col-sm-2 col-md-3 col-lg-3">
+				<h3>热门游记</h3>
+			</li>
+			<li class="col-xs-2 col-sm-2 col-md-3 col-lg-3">
+			
+			</li>
+			<li class="col-xs-2 col-sm-2 col-md-3 col-lg-3">
+			<a href="{:U('Publish/Publish')}">写游记</a>
+				<!-- <button type="button" class="btn btn-warning">写游记</button> -->
+			</li>
+
+		</ul>
+	</div>
+	
+</div>

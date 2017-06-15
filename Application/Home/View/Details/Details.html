@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>活动详情</title>
+
+  	<include file="Public/head"/>
+	<link href="__PUBLIC__/HomeEd/css/eventDetails.css" rel="stylesheet" type="text/css"></head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50" ng-app="myApp" ng-controller="validateCtrl">
+	<!-- 头部nav -->
+	<include file="Public/header"/>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 text-center">
+				<img ng-src="__PUBLIC__/home/IMG/pro/{{res.s_img}}" class="img-responsive"/>
+			</div>
+			<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
+				<h1>{{res.s_name}}</h1>
+				<div class="item_fix">
+					<!--关键词-->
+				</div> 
+				<div class="item_price">
+					<ul style="padding:0 0 0 10px;">
+						<li><span>￥</span><strong>{{res.s_pri}}</strong>起/人</li>
+						<li class="item_explain"><a href='#'>价格说明</a></li>
+						<li class="item_sold">近三月售出{{res.s_sum}}份</li>
+					</ul>
+				</div>
+				<div class="item_notice">
+					<span class="lable">预定须知</span>
+					<p class="info-tips-box">此产品为二次确认产品，在支付成功时间起24小时内供应商将进行二次确认，核实是否有位。</p>
+				</div>
+				<div class="item_notice">
+					<span class="lable">产品类型</span>
+					<div class="info-tips-box ">
+						<!--产品类型-->
+					</div>
+				</div>
+				<div class="item_notice">
+					<span class="lable">选择日期</span>
+					<div class="ui_data">
+						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							选择日期
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							<li><a href="#">日历</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="item_opt">
+					<span class="lable">数量选择</span>
+					<div class="item_opt_box">
+						<span class="item_input">
+							<span class="itm_adult">数量</span>
+							<span class="num">{{count}}</span>
+						</span>
+						<div class="item_btns">
+							<a class="btn-plus" ng-click="plus()">+</a>
+							<a class="btn-minus" ng-click="minus()">-</a>
+						</div>
+					</div>
+				</div>
+				<div class="item_action">
+					<div class="pull_price">
+						<span>￥</span><strong>{{res.s_pri}}</strong>
+					</div>
+					<div class="">
+						<button ng-click="buy()" type="button" class="btn btn-warning pull-right item_buy">立即购买</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container" >
+		<div class="row">
+			<div class="navbar navbar-default" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li class="item_pi active"><a href="#product_introduction">产品介绍</a></li>
+					<li><a href="#cost_statement">费用说明</a></li>
+					<li class="hidden-xs"><a href="#purchase_notes">购买须知</a></li>
+					<li class="hidden-xs"><a href="#user_reviews">用户点评</a></li>
+					<li><a href="#closing_record">成交记录</a></li>
+				</ul>
+			</div>
+			<!--详情介绍-->
+			<div id="contents"></div>
+			<div id="user_reviews" class="container-fluid">
+				<blockquote>
+					<h2>用户点评</h2>
+				</blockquote>
+				<ul class="item_comment">
+					<li class="item_discuss item_default">全部</li>
+					<li class="item_discuss">推荐 <span>(0)</span></li>
+					<li class="item_discuss">一般 <span>(0)</span></li>
+					<li class="item_discuss">不推荐 <span>(0)</span></li>
+				</ul><br />
+				<hr />
+				<div class="comment_content">
+					<span class="empty-msg">暂无点评</span>
+				</div>
+			</div>
+			<div id="closing_record" class="container-fluid">
+				<blockquote>
+					<h2>成交记录</h2>
+				</blockquote>
+				<div class="table-responsive">
+					<table class="table table-hover table-striped">
+						<thead>
+							<tr>
+								<th>用户名</th>
+								<th>拍下价格</th>
+								<th>数量</th>
+								<th>付款时间</th>
+								<th>产品名称</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="v in suc.orderlist">
+								<td>{{v.u_id}}</td>
+								<td>{{v.ol_money}}</td>
+								<td>{{v.ol_num}}</td>
+								<td>{{v.ol_ordertime}}</td>
+								<td>{{v.s_id}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="item_page">
+					<span>共<span ng-bind='suc.count'></span>条</span>
+		            <span>当前第<span ng-bind='suc.nowPage'></span>/<span ng-bind='suc.totalPage'></span>页</span>
+		            <input type='button' class="btn btn-default" value='首页' ng-click='firsPage()'/>
+		            <input type='button' class="btn btn-default" value='上一页' ng-click='upPage()'/>
+		            <input type='button' class="btn btn-default" value='下一页' ng-click='downPage()'/>
+		            <input type='button' class="btn btn-default" value='末页' ng-click='finallyPage()'/>
+				</div>  
+			</div>
+		</div>
+	</div>
+</body>
+	<script>
+		var pro_id="{$pro}";
+		console.log(pro_id);
+		var eventDetails_url = "{:U('Home/Details/Details')}";
+		var closing_record_url = "{:U('Home/Details/closing_record')}";//成交记录
+		var bubefor="{:U('home/Buy/before')}";
+		var buyUrl="{:U('home/Buy/buy')}";
+	</script>
+  	<script src="__PUBLIC__/HomeEd/js/eventDetails.js"></script>
+</html>

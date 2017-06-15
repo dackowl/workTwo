@@ -1,0 +1,265 @@
+body{
+	font-family: 微软雅黑;
+	background-color: #EFEFEF;
+}
+.item_bg{
+	height: 52px;
+	background-color: white;
+}
+.item_nav span{
+	font-size: 18px;
+}
+.navbar-toggle{
+    background-color: #ddd;
+    border-color: #ddd;
+}
+.icon-bar{
+    background-color: #888;
+}
+.navbar-brand{
+	display: block;
+	color: black;
+}
+.navbar-nav a{
+	font-size: 18px;
+	color: black;
+}
+.navbar-nav a:hover{
+	color: orange !important;
+	background-color:white !important;
+}
+.item_info{
+	background-color: white;
+}
+.myImg{
+	width: 120px;
+    height: 70px;
+    position: relative;
+    margin: 0 auto;
+}
+.myImg img{
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	position: absolute;
+	top: -40px
+}
+.myName{
+	width: 100%;
+	height: 25px;
+	text-align: center;
+	font-size: 22px;
+    line-height: 25px;
+    margin-top: 25px;
+}
+.myAdd{
+	margin-top: 16px;
+}
+#set_up{
+	padding-left: 40px;
+	cursor: pointer;
+}
+.myNota{
+	margin-top: 18px;
+	line-height: 30px;
+    border-radius: 3px;
+    color: #666;
+    background-color: #efefef;
+    text-align: center;
+   	cursor: pointer;
+}
+.myNota:hover{
+	background-color: orange;
+	color: white;
+}
+.nota{
+	display: none;
+}
+textarea{
+	height: 78px;
+    padding: 15px;
+    background-color: #efefef;
+    line-height: 20px;
+    color: #999;
+    border-style: none;
+    display: block;
+    width: 100%;
+    border: #efefef 1px solid;
+    font-size: 14px;
+    resize: none;
+}
+.preserved{
+	line-height: 30px;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #ccc;
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+}
+.preserved:hover{
+	background-color: orange;
+}
+.myFollow{
+	margin-top: 20px;
+	width: 100%;
+	height: 62px;
+	border-top: #e2e2e2 1px solid;
+    border-bottom: #e2e2e2 1px solid;
+}
+.follow,.fans,.honey{
+	position: relative;
+    width: 33%;
+    float: left;
+    padding: 5px 0;
+    text-align: center;
+}
+.item_follow{
+	padding: 45px 30px 0;
+    text-align: center;
+    font-size: 14px;
+}
+.item_follow_title{
+	font-size: 16px;
+    color: #444;
+    padding-bottom: 10px;
+    display: block;
+}
+.item_follow_character img{
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+}
+.item_message_board{
+	text-align: center;
+    font-size: 14px;
+    padding: 45px 0 0 0;
+}
+.message_board{
+	height: 78px;
+    background-color: #efefef;
+    line-height: 20px;
+    color: #999;
+    border-style: none;
+    width: 100%;
+    border: #efefef 1px solid;
+    font-size: 14px;
+    resize: none;
+}
+.nota_show{
+	margin-top: 15px;
+	width: 100%;
+}
+.common_block{
+	background-color: white;
+	margin: 20px 0;
+	height: 80px;
+	line-height: 80px;
+}
+.common_block>ul{
+	margin: 0;
+	padding: 0;
+}
+.common_block li{
+	float: left;
+	list-style-type: none;
+    width: 25%;
+    text-align: center;
+}
+.common_block li>a{
+	font-size: 18px;
+	color: #999;
+	text-decoration: none;
+}
+.common_block li>a:hover{
+	color: orange;
+}
+.travel_notes{
+	background-color: white;
+	padding-bottom: 40px;
+}
+.travel_notes_btn{
+	padding: 25px 30px;
+}
+.travel_notes_btn>h3{
+	display: inline-block;
+}
+#travel_notes{
+	float: right;
+	font-size: 16px;
+	width: 140px;
+    height: 40px;
+    margin-top: 8px;
+}
+.travel_notes img{
+	width: 100%;
+}
+.my_answer,.my_comment,.footers{
+	margin-top: 20px;
+}
+#my_answer,#my_comment{
+	height: 200px;
+	width: 220px;
+	margin-left: 180px;
+}
+#my_answer>span,#my_comment>span{
+	font-size: 16px;
+    color: #999;
+}
+.wer{
+	margin-top: 50px;
+	display: block;
+}
+
+.go_to{
+	position: relative;
+}
+#top{
+	position: absolute;
+	right:-45px;
+	bottom: 0;
+}
+.code_return{
+	width: 43px;
+    height: 43px;
+    border: 1px solid #e5e5e5;
+    text-align: center;
+    background-color: #fff;
+    cursor: pointer;
+}
+.code_return img{
+	margin: 4px 0px 0 0;
+}
+.code{
+	border-top: none;
+}
+
+
+
+.footers{
+	
+}
+/* 小屏幕（平板，大于等于 768px） */
+@media (min-width:768px) { 
+	.navbar-brand{
+		display: none;
+	}
+}
+
+/* 中等屏幕（桌面显示器，大于等于 992px） */
+@media (min-width:992px) {
+	.navbar-brand{
+		display: none;
+	}
+
+}
+
+/* 大屏幕（大桌面显示器，大于等于 1200px） */
+@media (min-width:1200px) {
+	.navbar-brand{
+		display: none;
+	}
+	.col-lg-3;
+}

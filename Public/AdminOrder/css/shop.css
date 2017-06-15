@@ -1,0 +1,68 @@
+.item_cent{
+	white-space: nowrap;
+}
+th,td{
+	vertical-align: middle !important;
+	text-align: center;
+}
+th{
+	background-color: #f2f2f2;
+}
+tbody img{
+	width: 180px;
+	height: 120px;
+}
+.item_page{
+	text-align: center;
+	font-size: 15px;
+	padding-top: 15px;
+}
+.item_title{
+	font-size: 30px;
+	color: black;
+}
+.item_img{
+	width: 120px;
+	height: 120px;
+}
+.item_user{
+	padding-top: 0px;
+}
+.item_orde{
+	padding-bottom: 0px;
+}
+.item_table{
+	height: 500px;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border: 1px solid #ccc;
+}
+.info_modify{
+	width: auto !important;
+}
+.modal-footer{
+	text-align: center;
+	border:none;
+}
+
+/* 小屏幕（平板，大于等于 768px） */
+@media (min-width: 768px) {
+	
+}
+
+/* 中等屏幕（桌面显示器，大于等于 992px） */
+@media (min-width: 992px) {
+	.modal-dialog{
+		width: 1000px;
+	}
+
+}
+
+/* 大屏幕（大桌面显示器，大于等于 1200px） */
+@media (min-width: 1200px) {
+	.modal-dialog{
+		width: 1200px;
+	}
+	
+}

@@ -1,0 +1,110 @@
+@CHARSET "UTF-8";
+.place-search-panel {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    margin: -71px 0 0 -500px;
+    width: 400px;
+    padding: 15px;
+    background-color: #000;
+    background-color: rgba(0,0,0,.4);
+    border-radius: 4px;
+}
+.place-search-panel h2 {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 15px;
+    font-weight: normal;
+    line-height: 1;
+    font-family: "Microsoft Yahei";
+}
+.place-search-panel-sm .search-input, .place-search-panel-sm .search-button {
+    height: 36px;
+    line-height: 1;
+}
+.search-input {
+    float: left;
+    width: 308px;
+    height: 46px;
+    margin: 0 6px 0 0;
+    padding: 0 20px;
+    background-color: #fff;
+    border: 0 none;
+    line-height: 46px;
+    font-size: 18px;
+    color: #111;
+    border-radius: 4px;
+}
+.place-search-panel .icon-search {
+    display: inline-block;
+    margin-top: 11px;
+    width: 24px;
+    height: 24px;
+    background: url(http://images.mafengwo.net/images/header-sprites.png) no-repeat 0 -110px;
+    overflow: hidden;
+    vertical-align: top;
+}
+place-search-panel .search-button {
+    float: left;
+    width: 45px;
+    height: 46px;
+    background-color: #ff9d00;
+    border-radius: 4px;
+    text-align: center;
+}
+.place-search-hot {
+    font-size: 14px;
+    margin-top: 15px;
+    line-height: 16px;
+}
+.place-search-hot a {
+    margin-right: 10px;
+    color: #fff;
+}
+
+
+
+
+   .left{
+	    width:550px;
+   		height:400px;
+   		float:left;
+   }
+   .right{
+		width:550px;
+   		height:400px;
+   		float:left;
+   }
+   a{
+	text-decoration: none;
+   }
+   span a:hover{
+	color:#ff9d00;
+   	text-decoration: none;
+   }
+   
+	
+
+
+
+.title {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 12px 20px 0;
+	width:100%;
+    height: 57px;
+    line-height: 56px;
+    font-weight: normal;
+    background: -moz-linear-gradient(top,rgba(0,0,0,0) 10px,rgba(0,0,0,0.2) 50%,rgba(0,0,0,0.5) 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(15%,rgba(0,0,0,0)),color-stop(50%,rgba(0,0,0,0.2)),color-stop(100%,rgba(0,0,0,0.5)));
+    background: -webkit-linear-gradient(top,rgba(0,0,0,0) 10px,rgba(0,0,0,0.2) 50%,rgba(0,0,0,0.4) 100%);
+    background: -o-linear-gradient(top,rgba(0,0,0,0) 10px,rgba(0,0,0,0.2) 50%,rgba(0,0,0,0.5) 100%);
+    background: -ms-linear-gradient(top,rgba(0,0,0,0) 10px,rgba(0,0,0,0.2) 50%,rgba(0,0,0,0.5) 100%);
+    background: linear-gradient(to bottom,rgba(0,0,0,0) 10px,rgba(0,0,0,0.2) 50%,rgba(0,0,0,0.5) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000',endColorstr='#99000000',GradientType=0);
+    -webkit-transition: opacity .5s ease 0s;
+    transition: opacity .5s ease 0s;
+}

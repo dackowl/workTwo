@@ -1,0 +1,41 @@
+body{
+	background-image: url('../IMG/ico/29.jpg');
+}
+html,body{
+	height: 100%;
+}
+p{
+	color: #747474;
+}
+h4{
+    color: white;
+	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+.input-group{
+	padding: 12px;
+}
+.well{
+	background-color: white;
+	padding: 0px 42px;
+}
+.container{
+    display:table;
+    height:100%;
+}
+.row{
+    display: table-cell;
+    vertical-align: middle;
+}
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    text-align:left;
+    margin-right:-4px;
+}
+
+     

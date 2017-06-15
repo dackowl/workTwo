@@ -1,0 +1,97 @@
+body{
+	font-size: 18px;
+}
+#myTab a{
+	color: #666;
+}
+.item_info{
+	padding-bottom: 18px;
+    margin: 0 0 20px 0;
+    border-bottom: 1px solid #eee;
+}
+.item_info>strong{
+	font-size: 24px;
+    color: #444;
+    font-weight: normal;
+}
+.item_resize{
+	resize: none;
+	height: 110px !important;
+}
+.img-circle{
+	width: 120px;
+	height: 120px;
+}
+.fileCss{
+	padding-top: 20px;
+}
+.file {
+    position: relative;
+    display: inline-block;
+    background: #ffa800;
+    border: 1px solid #ffa800;
+    border-radius: 4px;
+    padding: 4px 12px;
+    color: white;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+    overflow: hidden;
+}
+.file input {
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+.file:hover {
+    border-color: none;
+    color: white;
+    text-decoration: none;
+}
+.fileImg,.item_file{
+   	float: left;
+}
+.item_file{
+	padding-left: 150px;
+}
+#fileImg>img{
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+}
+.curr_file{
+	display: none;
+	margin: 20px 0 0 25px;
+	background: #ffa800;
+    border: 1px solid #ffa800;
+    border-radius: 4px;
+    padding: 2px 12px;
+    color: white;
+}
+.my_money{
+	padding-bottom: 20px;
+}
+.item_symbol,.currMoney{
+	color: red;
+}
+.currMoney{
+	font-size: 30px;
+}
+
+
+@media(max-width: 768px){
+	.item_file{
+	    padding-left: 70px;
+	}
+}
+@media (min-width: 768px) {
+	
+}
+@media (min-width: 992px) {
+	
+}
+@media (min-width: 1200px) {
+	
+	
+}

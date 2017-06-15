@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>目的地</title>
+<include file="Public/head"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/CSS/home.css">
+<link href="__PUBLIC__/lwd/edit/css/des.css" rel="stylesheet"/>  
+<link href="__PUBLIC__/lwd/css/bootstrap.min.css" rel="stylesheet"/>
+<script src="__PUBLIC__/lwd/js/angular.min.js"></script> 
+</head>
+<body ng-app="App" ng-controller="destin"> 
+<!-- 头部nav -->
+    <include file="Public/header"/>
+    <!-- 轮播 -->
+    <include file="Public/banner"/> 
+    <div class="container-fluid" >
+    <hr/>
+   <!-- Button trigger modal -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-2">
+			<button type="button" class="btn btn-info btn-lg addin" data-toggle="modal" data-target="#myModal">
+			 添加
+			</button>
+		</div>
+		<div class="col-lg-10"></div>
+	</div>
+</div>
+<!-- Modal 添加目的地-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title " id="myModalLabel">添加目的地</h4>
+      </div>
+      <div class="modal-body text-center" >
+			<div class="text-center ">
+			   <img class='st' src="__PUBLIC__/lwd/edit/img/logo.png">	      	     
+			</div><br>
+			<div class="input-group">
+			  <span class="input-group-btn">
+				<button class="btn btn-default" type="button">城市:</button>
+			  </span>
+			  <input type="text" class="form-control" aria-label="..." ng-model="pro.d_city">
+			</div><br>
+			<div class="input-group">
+			  <span class="input-group-btn">
+				<button class="btn btn-default" type="button">区域:</button>
+			  </span>
+			  <select class="form-control" ng-model='pro.d_area'>
+			  	<foreach name="Are" item="a">
+			  		<option value="{$a.a_id}">{$a.a_name}</option>
+			  	</foreach>
+			  </select>
+			</div><br>
+			<div class="input-group">
+			  <span class="input-group-btn">
+				<button class="btn btn-default" type="button">人气:</button>
+			  </span>
+			  <input type="text" class="form-control" aria-label="..." ng-model="pro.d_man">
+			</div><br>
+			<div class="input-group" >
+			      <span class="input-group-btn">
+			        <button class="btn btn-default" type="button">状态:</button>
+			      </span>
+		      	  <span class="form-control">{$Stat.s_name}</span>
+			   </div><br>
+			<span>介绍:</span><br>
+			<textarea id="val" style="height: 110px;width: 519px;resize: none;overflow:scroll-y;" name="con" ng-model="pro.d_con"></textarea>
+			<br>
+		</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary sub">提交</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+	<div class="col-lg-4 col-md-4 col-sm-4"></div>
+	<div class="col-lg-4 col-md-4 col-sm-4 fon"><h2 class="hot_des text-center">热门目的地</h2></div>
+	<div class="col-lg-4 col-md-4 col-sm-4"></div>   
+</div>
+<div class="container">
+	<div class="row">
+		<foreach name="Area" item="a">
+			<div class="col-lg-6 text-center"><h3>{$a.a_name}</h3></div>
+		</foreach>
+	</div>
+	<div class="row">
+		 <div class="col-lg-6 left">
+	         <foreach name="City" item="d">
+	         	<span style="width:100px; float:left;margin-top:20px;text-align: center;">
+	         		<a href="#" class="cname">{$d.d_city}</a>
+	         	</span>
+	         </foreach>
+	    </div>
+	    <div class="col-lg-6 right">
+	        <foreach name="Des_name" item="c">
+	            <span style="width:100px; float:left;margin-top:20px;text-align: center;">
+	            	<a href="#" class="cname">{$c.d_city}</a>
+	            </span>
+	        </foreach>
+	    </div>
+	</div>
+</div>
+
+<script>
+$reset="{$Stat.s_id}";
+$sub_url="{:U('Des/sub')}";
+$detail_url="{:U('Des/detail')}";
+var transform = function(data){
+	  return $.param(data);
+	}
+angular.module('App', []).controller('destin', function($scope, $http) {
+	$scope.pro={
+			
+	};
+	
+	$('.addin').on("click",function(){/* 初始化添加信息 */
+		$scope.pro={
+				 d_city:'',
+				 d_st:$reset,
+				 d_area:'',
+				 d_con:'',
+				 d_man:''
+				 
+		 	}
+		console.log($scope.pro);
+	})
+	$(".cname").on("click",function(){/*跳转到详情页*/
+		$c_name=$(this).html();
+		var url = $detail_url + "?cname="+$c_name;
+		location.href=url;
+	})
+	$(".sub").on("click",function(){/*添加链接*/
+		 if(confirm("确定添加？")){
+			 $http({
+		         url:$sub_url,
+		         method:'post',
+		         data:{'data':$scope.pro},
+		         headers:{'Content-Type':'application/x-www-form-urlencoded'},
+		         transformRequest: transform 
+		         }).then(function(response){
+		        	 console.log(response);
+		            if(response.data.statu=='1'){
+		         	   alert(response.data.sub);
+		         	   location.reload();
+		            }else{
+		         	   alert(response.data.sub);
+		            }
+		         }).catch(function (res) {
+		           console.log(res);
+		       });
+        }
+	})
+	
+})
+</script>
+<script src="__PUBLIC__/lwd/js/jquery-3.1.0.min.js"></script>
+<script src="__PUBLIC__/lwd/js/bootstrap.min.js"></script>
+</body>
+</html>

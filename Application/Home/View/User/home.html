@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>蜜蜂窝</title>
+	<!-- 引用bootstrap,angular,jquery.j及默认样式 -->
+	<include file="Public/head"/>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/CSS/home.css">
+</head>
+<body>
+	<!-- 头部nav -->
+	<include file="Public/header"/>
+	<!-- 轮播 -->
+	<include file="Public/banner"/>
+	<!-- 主要内容区 -->
+	<include file="Public/home_conter"/>
+	
+	<!-- 聊天工具按钮 -->
+	<include file="Public/beeCli"/>
+	<!-- 底部版本信息等 -->
+	<include file="Public/footer"/>
+</body>
+<script src="__PUBLIC__/Home/JS/home.js" type="text/javascript" charset="utf-8"></script>
+<script> 
+	checkImg="{:U('User/VerifyImg')}"+"?"+Math.random(); 
+</script>
+<script>
+	angular.module('myApp', []).controller('home', function($scope,$http) {
+		$scope.login="{$login}";
+		$http({
+            url:"{:U('Home/Pro/scech')}",
+            method:'post',   
+              data:{},
+              headers:{'Content-Type':'application/x-www-form-urlencoded'},
+              transformRequest: transform 
+            }).then(function(response){
+               $scope.pro=response.data.data;
+            }).catch(function (res) {
+              // alert('修改失败未知错误');
+              console.log(res);
+          });
+        $http({
+            url:"{:U('Home/Travel/sc')}",
+            method:'post',   
+              data:{},
+              headers:{'Content-Type':'application/x-www-form-urlencoded'},
+              transformRequest: transform 
+            }).then(function(response){
+               $scope.Travel=response.data;
+				console.log($scope.Travel);
+            }).catch(function (res) {
+              // alert('修改失败未知错误');
+              console.log(res);
+          });    
+        $scope.goto=function(name){
+			console.log(name);
+			window.location.href="{:U('Details/Details')}"+"?id="+name;
+        }
+	})
+</script>
+</html>

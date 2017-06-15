@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>登录</title>
+  <include file="Public/head"/>
+	<link href="__PUBLIC__/Home/pro/scss/shop.css" rel="stylesheet">
+	<script src="__PUBLIC__/Home/pro/sjs/shop.js" type="text/javascript"></script>
+</head>
+<style type="text/css" media="screen">
+  	
+</style>
+<body ng-app='myApp' ng-controller="myCtrl" ng-cloak class="ng-cloak">
+	<!-- 头部nav -->
+  <include file="Public/header"/>
+ 	<div class="container">
+ 	<div class="row">
+ 		<div class="col-lg-2 text-center"></div>
+ 		<div class="col-lg-1 text-center">机票+酒店</div>
+ 		<div class="col-lg-1 text-center">半自助游</div>
+ 		<div class="col-lg-1 text-center">当地游</div>
+ 		<div class="col-lg-1 text-center">国内机票</div>
+ 		<div class="col-lg-1 text-center">签证</div>
+ 		<div class="col-lg-1 text-center">全球WiFi</div>
+ 		<div class="col-lg-1 text-center">游轮</div>
+ 		<div class="col-lg-1 text-center">旅游保险</div>
+ 		<div class="col-lg-2 text-center"></div>
+ 	</div>
+ 	</div>
+  	<div class='container' id='row'>
+  	<div class='row'>
+	  	<div class="col-lg-1"></div>
+		<div class="col-lg-2">
+			<img src="__PUBLIC__/Home/pro/img/jpjd.png" alt="">
+		</div>
+		<div class="col-lg-8">
+			<div id='sous'>
+				<input type="text" placeholder="请输入目的地 / 产品名称">
+				<a id='right_img' href=""><img src="__PUBLIC__/Home/pro/img/sous2.png" alt=""></a>
+			</div>
+		</div>
+			
+	  	</div>
+	</div>  	
+  	</div>
+  	<div class='container' id='bner'>
+	<div class='row'>
+		<div class="col-lg-1 text-center"></div>
+		<div class="col-lg-3 text-center" id='bn_left'>
+			<div id='banner_left'>
+
+			</div>
+		</div>
+		<div class="col-lg-7">
+			<div id='banner_right'>
+				<ul id="ul">
+					<li><img src="__PUBLIC__/Home/pro/img/banner2.png" alt=""></li>
+					<li><img src="__PUBLIC__/Home/pro/img/banner4.png" alt=""></li>
+					<li><img src="__PUBLIC__/Home/pro/img/banner5.png" alt=""></li>
+					<li><img src="__PUBLIC__/Home/pro/img/banner3.png" alt=""></li>
+					<li><img src="__PUBLIC__/Home/pro/img/banner1.png" alt=""></li>
+				</ul>
+				<ol id="ol">
+		           	<li class="ys">暑期大促5折起</li>
+		            <li>夏日慧约</li>
+		            <li>端午大出行</li>
+		            <li>全场9元起</li>
+		            <li>马代度假游</li>
+		       </ol>
+			</div>
+		</div>
+			<img id='banner_topimg' src="__PUBLIC__/Home/pro/img/tm.png" alt="">
+  	</div>
+  	<div class="col-lg-1"></div>
+  	<div class='container' id='ct'>
+  	<div class='row'>
+		<div class="col-lg-1"></div>
+		<div class="col-lg-10">
+			<div id='content'>
+  				<span id='host'>正在热卖</span>
+  				<span id='host2'>特价好货抢不停！</span>
+  		
+  			</div>
+		</div>
+		<div class="col-lg-1"></div>
+  	</div>
+  	</div>
+  	<div class='container' id='host_container'>
+	<div class='row'>
+		<div class="col-lg-1"></div>
+		<div class="col-lg-10">
+			<div id='hostdiv'>
+			<div id='top'>
+				<foreach name="attr" item="v">
+					<div class='sp' onclick="go(this)" id='{$v.s_id}'>
+					<img src="__PUBLIC__/Home/pro/img/{$v.s_img}" alt="">
+					<div class='tk'>
+						<div class='tk_01' style="background-color: white"><span style="background-color: white">{$v.s_details}</span></div>
+					</div>
+					<span class='money'>￥{$v.s_pri}</span><span class='qi'>起</span>
+					</div>
+				</foreach>
+			</div>	
+			</div>
+		</div>
+		<div class="col-lg-1"></div>
+	</div>
+  	</div>
+  	<div class='container' id='sp_container'>
+	<div class='row'>
+		<div class="col-lg-1"></div>
+		<div class="col-lg-10">
+			<div id='shopin'>
+				<span id='hostin'>正在进行</span>
+  				<span id='hostin2'>为您的旅行全程服务！</span>
+			</div>
+			<div id='sp02'>
+				<div class='sp' ng-repeat="x in res.usersData">
+				<img  src="__PUBLIC__/Home/pro/img/{{x.s_img}}" alt="">
+				<div class='tkk' ng-click="tkk()">
+					<div class='tkk_01' style="background-color: white"><span ng-bind="x.s_details" style="background-color: white"></span></div>
+				</div>
+				<span class='money' ng-bind="x.s_pri"></span><span class='qi'>起</span>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-1"></div>
+	</div>
+  	</div>
+	<div id="pageDiv" style="text-align: center;">
+        <div class="container">
+          	<div>
+                <span style='color:green;'>当前第<span ng-bind='res.nowPage'></span>/<span ng-bind='res.totalPage'></span>页</span>
+                <button class='btn btn-info'  type='button' value='首页' ng-click='firsPage()'>首页</button>
+                <button class='btn btn-info' type='button' value='上一页' ng-click='upPage()'>上一页</button>
+                <button class='btn btn-info' type='button' value='下一页' ng-click='downPage()'>下一页</button>
+                <button class='btn btn-info' type='button' value='末页' ng-click='finallyPage()'>末页</button>
+            </div>
+        </div>
+    </div>
+</body>
+  	<script type="text/javascript">
+		var transform = function(data) {
+            return $.param(data);
+        }
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope, $http) {
+            var pageSize = '4'; //定义每页4条数据
+            //获取当前页的数据
+            function nowPage(nowPage,pageSize){
+                $http({
+                url:"{:U('Home/shop/nowpage')}",
+                method:'post',
+                    data:{
+                        nowPage:nowPage,
+                        pageSize:pageSize
+                    },
+                    headers:{'Content-Type':'application/x-www-form-urlencoded'},
+                    transformRequest: transform
+                }).then(function(res){
+                    console.log(res.data);
+                    if (res.data.rol == 0) {
+                        alert(res.data.Msg);
+                    }else{
+                        $scope.res = res.data;
+                    }
+                }).catch(function (err) {
+                    console.log(err);
+                });
+            }
+            //第一页
+            nowPage('1',pageSize);
+            //跳转首页
+            $scope.firsPage = function(){
+                nowPage(1,pageSize);
+            }
+            //跳转末页
+            $scope.finallyPage = function(){
+                nowPage($scope.res.totalPage,pageSize);
+            }
+            //上一页
+            $scope.upPage = function(){
+                if($scope.res.nowPage>1){
+                    $scope.res.nowPage--;
+                    nowPage($scope.res.nowPage,pageSize);
+                }else{
+                    alert('当前已是第一页');
+                }
+            }
+            //下一页
+            $scope.downPage = function(){
+                if($scope.res.nowPage<$scope.res.totalPage){
+                    $scope.res.nowPage++;
+                    nowPage($scope.res.nowPage,pageSize);
+                }else{
+                    alert('当前已是最后一页');
+                }
+            }
+            $scope.tkk=function(){
+              $(".tkk").on("mousemove",function(){
+              $(this).children().eq(0).css({"margin-top":"5px"});
+              })
+              $(".tkk").on("mouseout",function(){
+              $(this).children().eq(0).css({"margin-top":"63px"});
+  })
+            }
+        })
+
+
+        function go(e){
+          window.location.href="{:U('Details/Details')}"+"?id="+e.id;
+        }
+  	</script>
+</html>

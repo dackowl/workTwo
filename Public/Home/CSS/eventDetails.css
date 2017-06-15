@@ -1,0 +1,235 @@
+body{
+	font-family: 微软雅黑;
+}
+.item_price{
+	height: 60px;
+	line-height: 60px;
+    background-color: #f6f6f6;
+    font-size: 12px;
+    color: #999;
+    margin-top: 10px;
+}
+.item_price li{
+	float: left;
+	list-style-type: none;
+	padding-right: 5px;
+}
+.item_price span{
+	font-size: 20px;
+    color: #ff6f00;
+    font-family: "Tahoma";
+    font-weight: normal;
+}
+.item_price strong{
+	font-size: 22px;
+    color: #ff6f00;
+    font-family: "Tahoma";
+    font-weight: normal;
+}
+.item_explain a{
+	position: relative;
+	color: #ff9d00;
+	cursor: pointer;
+	top: 10px;
+}
+.item_sold{
+	position: relative;
+	top: 10px;
+	padding-left: 10px;
+}
+.item_notice{
+	margin-top: 15px;
+	width: 100%;
+	height: 50px;
+}
+.lable{
+	float: left;
+    padding: 0 15px 0 5px;
+    color: #999;
+}
+.info-tips-box{
+	overflow: hidden;
+	color: #999;
+}
+.ui_data{
+	width: 190px;
+	height: 28px;
+	float: left;
+}
+.dropdown-menu{
+	left: auto;
+	top: auto;
+}
+.item_opt{
+	height: 50px;
+}
+.item_opt_box{
+	float: left;
+	border: 1px solid #999;
+	width: 80px;
+	height: 28px;
+	line-height: 28px;
+}
+.itm_adult{
+	margin-left: 10px;
+}
+.item_btns{
+	width: 15px;
+	float: right;
+	display: block;
+	height: 100%;
+	border-left: 1px solid #999;
+	position: relative;
+}
+.item_input{
+	float: left;
+}
+.item_btns a:hover{
+	text-decoration: none;
+	color: black;
+}
+.btn-plus,.btn-minus{
+	font-size: 15px;
+	width: 100%;
+	height: 13px;
+	text-align: center;
+	line-height: 13px;
+	position: absolute;
+	left: 0;
+	color: black;
+}
+.btn-plus{	
+	top:0;
+	border-bottom: 1px solid #999;
+}
+.btn-minus{
+	bottom: 0;
+}
+.item_action{
+	margin-bottom: 82px;
+    height: 50px;
+    background-color: #f6f6f6;
+}
+.item_buy{
+	height: 50px;
+    border-radius: 0;
+}
+/* 小屏幕（平板，大于等于 768px） */
+@media (min-width:768px) { 
+	h1{
+		font-size: 28px;
+	}
+	.item_price li{
+		padding-right: 15px;
+	}
+	.item_sold{
+		padding-left: 20px;
+	}
+	.item_price strong{
+		font-size: 34px;
+	}
+}
+
+/* 中等屏幕（桌面显示器，大于等于 992px） */
+@media (min-width:992px) {
+	h1{
+		font-size: 31px;
+	}
+	.item_price li{
+		padding-right: 15px;
+	}
+	.item_sold{
+		padding-left: 20px;
+	}
+	.item_price strong{
+		font-size: 34px;
+	}
+}
+
+/* 大屏幕（大桌面显示器，大于等于 1200px） */
+@media (min-width:1200px) {
+	h1{
+		font-size: 36px;
+	}
+	.item_price li{
+		padding-right: 30px;
+	}
+	.item_sold{
+		padding-left: 20px;
+	}
+	.item_price strong{
+		font-size: 34px;
+	}
+	#myNavbar{
+		width: 1170px;
+	}
+	
+}
+/*固定导航栏*/
+.fixednav {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
+#myNavbar{
+	height: 52px;
+	line-height: 52px;
+}
+#myNavbar>ul{
+	margin: 0;
+	padding: 0;
+}
+#myNavbar li{
+	float: left;
+	list-style-type: none;
+	margin-right: 30px;
+	height: 52px;
+}
+#myNavbar li>a{
+    font-size: 18px;
+ 	text-decoration: none;
+}
+#myNavbar li>a:hover{
+	color: #ff9d00;
+}
+.navbar-default .navbar-nav>.active>a{
+	color: orange;
+}
+/*.navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+	background-color: white;
+}*/
+blockquote{
+	margin: 0 0 25px 0;
+	padding: 0;
+	border-left: 4px solid orange;
+}
+h2{
+	padding-left: 20px;
+	color: black;
+}
+.info_left{
+	margin: 0 0 0 25px;
+}
+.info_cre{
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background-color: orange;
+	float: left;
+	margin:10px 10px 0 0;
+}
+.info_safe{
+	float: left;
+}
+.dt{
+	font-size: 18px;
+	color: #333333;
+	margin-bottom: 8px;
+}
+dd{
+	font-size: 14px;
+    margin: .3em 0 1.8em;
+}
+.info_tm{
+	margin-bottom: 35px;
+}

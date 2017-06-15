@@ -1,0 +1,81 @@
+#bounced{
+	height:300px;
+	width:500px;
+	border:1px solid grey;
+	box-shadow: 2px 2px 2px grey;
+	background-color:#CCCCCC;
+	position:absolute;
+	left:400px;top:-525px;
+	//display:none;
+}
+#ym{
+	height:50px;
+	width:500px;
+	margin-top:40px;
+	//background-color: skyblue;
+	position: relative;
+}
+#ym span{
+	position:absolute;
+	top:17px;left:40px;
+}
+#ym input{
+	height:35px;
+	width:335px;
+	position:absolute;
+	top:5px;left:117px;
+}
+#xm{
+	height:50px;
+	width:500px;
+	margin-top:50px;
+	//background-color: skyblue;
+	position: relative;
+}
+#xm span{
+	position:absolute;
+	top:17px;left:40px;
+}
+#xm input{
+	height:35px;
+	width:335px;
+	position:absolute;
+	top:5px;left:117px;
+}
+#btn{
+	height:50px;
+	width:500px;
+	margin-top:60px;
+	position: relative;
+}
+#btn1{
+	height:50px;
+	width:249px;
+	border:none;
+	background-color:#1874CD;
+}
+#btn2{
+	height:50px;
+	width:249px;
+	border:none;
+	margin-left:2px;
+	background-color:#1874CD;
+}
+#btn1:hover{
+	background-color:white;
+	border:2px solid #1874CD;
+}
+#btn2:hover{
+	background-color:white;
+	border:2px solid #1874CD;
+}
+#ng{
+	position:absolute;
+	top:20px;left:117px;
+	font-size: 13px;
+}
+#ng2{
+	position:absolute;
+	top:126px;left:117px;
+	font-size: 13px;
+}

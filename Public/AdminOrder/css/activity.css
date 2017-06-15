@@ -1,0 +1,70 @@
+.form-horizontal .form-group {
+    margin-right: 0px; 
+    margin-left: 0px; 
+}
+textarea{
+    resize: vertical;
+}
+.file {
+    position: relative;
+    display: inline-block;
+    background: #D0EEFF;
+    border: 1px solid #99D3F5;
+    border-radius: 4px;
+    padding: 4px 12px;
+    color: black;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+    overflow: hidden;
+}
+.file input {
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+.file:hover {
+    background: #AADFFD;
+    border-color: #78C3F3;
+    color: #004974;
+    text-decoration: none;
+}
+#fileImg{
+    text-align: center;
+    font-size: 30px;
+    color: #999;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.item_detail_img_show{
+    width: 100%;
+}
+.item_warning{
+    color:red;
+    font-size:12px;
+    margin-left: 5%;
+}
+
+
+@media (min-width: 768px) {
+    .item_warning{
+        padding-left: 14%;
+    }
+}
+@media (min-width: 992px) {
+    .item_warning{
+        padding-left: 13%;
+    }
+}
+@media (min-width: 1200px) {
+    .item_warning{
+        padding-left: 13%;
+    }
+
+}
+
+
+

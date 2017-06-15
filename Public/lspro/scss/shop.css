@@ -1,0 +1,10 @@
+
+*{
+    margin:0px;
+    padding:0px;
+}
+#bigdiv{
+	height:58px;
+	width:100%;
+	box-shadow: 1px 1px 1px grey;
+}

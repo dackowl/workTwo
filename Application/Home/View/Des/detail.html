@@ -1,0 +1,158 @@
+ <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE-edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>目的地详情</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/CSS/home.css">
+<include file="Public/head"/>
+<link href="__PUBLIC__/lwd/css/bootstrap.min.css"  rel="stylesheet"/>
+<link href="__PUBLIC__/lwd/edit/css/des_detail.css?Ver=1.0" rel="stylesheet"/>
+<script src="__PUBLIC__/lwd/js/angular.min.js"></script> 
+</head>
+<body ng-app="myApp" ng-controller="detail" ng-cloak class="ng-cloak">
+	<!-- 头部nav -->
+    <include file="Public/header"/>
+<div class="container crumb">
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="ite">
+		    	<a href="{:U('Des/index')} ">目的地（返回）</a>
+		    	<em>&gt;</em>
+		    </div>
+			<div class="ite">
+			    <span class="hd">
+			    	<a href="#" >中国<i></i></a>
+			    </span>
+				<em>&gt;</em>
+			</div>
+			<div class="ite">
+				<div class="ite">
+				     <span class="hd">
+				     	<a href=""><span class="city">{$Det.d_city}</span><i></i></a>
+				     </span>
+				</div>
+				<em>&gt;</em>
+			</div>
+		    <div class="ite cur"><strong>{$Det.d_city}简介</strong></div>
+			</div>
+		<div class="col-lg-6"></div>
+	</div>
+</div>
+<div class="container ">
+	<div class="row ">
+		<div class="col-lg-4 col-md-4 col-sm-4"></div>
+		<div class="col-lg-4 col-md-4 col-sm-4"><h2 class="text-center">地区简介</h2></div>
+		<div class="col-lg-4 col-md-4 col-sm-4"></div>
+	</div>
+</div>
+<div class="container" data-cs-t="目的地详情页">
+		<div class="col-lg-6 left">
+			<img src="__PUBLIC__/lwd/edit/img/{$Det.d_img} " class="left">
+		</div>
+		<div class="col-lg-6 right">
+			<div class="right">
+				{$Det.d_con}
+			</div>
+		</div>
+	</div>	
+	<hr>
+</div>	
+<div class="container">
+	<div class="row">
+		<div class="col-lg-4 col-md-4 col-sm-4"></div>
+		<div class="col-lg-4 col-md-4 col-sm-4"><h2 class="text-center">讨论区</h2></div>
+		<div class="col-lg-4 col-md-4 col-sm-4"></div>
+	</div>
+	<div class="row">
+		<div class="col-lg-10 ">
+			<textarea class="change"></textarea>
+		</div>
+		<div class="col-lg-2 ">
+			<input type="button" value="发布" class="btn">
+		</div>
+	</div>
+	<div class="row">
+		<ul class="comment-list">
+			<li class="item" ng-repeat="x in com">                                                            
+				<div class="c-bar">
+					<a class="user" href="/u/5063706.html">
+						<img src="http://b1-q.mafengwo.net/s2/M00/D3/9B/wKgBpU5rikb5liLkAAAGbKJTJYY925.gif" height="48" width="48">
+						<span class="name" ng-bind="x.account"></span>
+					</a>
+					<span class="time" ng-bind="x.create_time"></span>
+					<!-- <span class="opt">
+						<a class="reply J_replyUser" ng-click="reply(x.account)">回复</a>
+					</span> -->
+				</div>
+				<div class="c-txt" ng-bind="x.content">内容发表</div>
+			</li>
+		</ul>
+	</div>
+</div>
+<script src="__PUBLIC__/lwd/js/jquery-3.1.0.min.js"></script>
+<script src="__PUBLIC__/lwd/js/bootstrap.min.js"></script>
+<script>
+$comment_url="{:U('Des/comment')}";
+$commen_url="{:U('Des/commen')}";
+var transform = function(data){
+	  return $.param(data);
+	}
+angular.module('myApp', []).controller('detail', function($scope, $http) {
+	$scope.pro={
+		u_id:'u_id',
+		d_city:'d_city',
+		create_time:'create_time',
+		content:'content'
+	};
+	 $http({
+         url:$comment_url,
+         method:'post',
+         data:{'data':$scope.pro},
+         headers:{'Content-Type':'application/x-www-form-urlencoded'},
+         transformRequest: transform 
+         }).then(function(response){
+        	 console.log(response.data);
+        	 $scope.com=response.data;
+         }).catch(function (res) {
+           console.log(res);
+       });
+	 $('.btn').on('click',function(){/*发布*/
+		 $change=$('.change').val();
+		 $time=new Date();
+		 $now_time=$time.getFullYear()+"-"+eval($time.getMonth()+1)+"-"+$time.getDate()+" "+$time.getHours()+":"+$time.getMinutes()+":"+$time.getSeconds();
+		 $city=$('.city').html();
+		 $scope.por={
+			content:$change,
+			create_time:$now_time,
+			d_city:$city,
+			account:"王五"
+		}
+		$http({
+	         url:$commen_url,
+	         method:'post',
+	         data:{'data':$scope.por},
+	         headers:{'Content-Type':'application/x-www-form-urlencoded'},
+	         transformRequest: transform 
+	         }).then(function(response){
+	        	 if(response.data.statu=='0'){
+		         	   alert(response.data.msg);
+			            }
+	        	 else if(response.data.statu=='1'){
+		         	   alert(response.data.msg);
+		         	  $scope.com.unshift($scope.por);
+		            }else{
+		         	   alert(response.data.msg);
+		            }
+	         }).catch(function (res) {
+	           console.log(res);
+	       });
+		 $change=$('.change').val("");
+	 })
+	 
+})
+ 
+</script>
+</body>
+</html>

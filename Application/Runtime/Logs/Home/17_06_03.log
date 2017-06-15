@@ -1,0 +1,35 @@
+[ 2017-06-03T18:04:17+08:00 ] ::1 /work/index.php/Home/User/home.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000406s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001015s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001123s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000126s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000181s ]
+NOTIC: [8] Array to string conversion /Users/hunkhe/Desktop/hf161028/work/Application/Runtime/Cache/Home/3c2cb086f96d013b5e3406943f509c9c.php 第 188 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014078s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014122s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000145s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000172s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000847s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000915s ]
+
+[ 2017-06-03T18:04:18+08:00 ] ::1 /work/index.php/Home/Pro/scech.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000517s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000494s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000540s ]
+SQL: SHOW COLUMNS FROM `mf_shop` [ RunTime:0.0038s ]
+SQL: SELECT `s_name`,`s_pri`,`s_img`,`s_num` FROM `mf_shop` WHERE `s_num` > 0 ORDER BY s_num LIMIT 4   [ RunTime:0.0006s ]
+NOTIC: [8] Use of undefined constant AJAX_MSG - assumed 'AJAX_MSG' /Users/hunkhe/Desktop/hf161028/work/Application/Home/Controller/ProController.class.php 第 26 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000592s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000638s ]
+
